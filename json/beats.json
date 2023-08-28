@@ -15,6 +15,7 @@
         "id": 2,
         "name": "CALLEJERO FINO TYPE BEAT",
         "img": "./assets/imgs/callejero-fino-type-beat.jpg",
+        "audioSource": "./assets/audio/Vigilante.mp3",
         "category": "RKT/Cumbia 420",
         "price": {
             "Exclusive": 89,

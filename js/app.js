@@ -34,7 +34,7 @@ function generateBeats() {
                             color: "lightpink"
                         },
                         close: true
-                        }).showToast();
+                    }).showToast();
                 }, 3000);
             })
             .catch(() => {
@@ -67,15 +67,32 @@ function generateAllBeats() {
         for (const licenseType in beat.price) {
             options += `<option value="${licenseType}">${licenseType}: <strong>U$D</strong> ${beat.price[licenseType]}</option>`
         }
+        const playButton = document.createElement("div")
+        playButton.innerHTML = `<span class="material-icons">play_circle</span>`
+        let audio
+        playButton.addEventListener("click", () => {
+            audio = new Audio(beat.audioSource)
+            audio.play()
+        })
+
+        const stopButton = document.createElement("div")
+        stopButton.innerHTML = `<span class="material-icons">stop</span>`
+        stopButton.addEventListener("click", () =>{
+            audio.pause()
+        })
+
         const divisor = document.createElement("div")
         divisor.classList.add("beat-container__div")
+        
+        const beatContainerAudio = document.createElement("div")
+        beatContainerAudio.classList.add("beat-container__div-audio")
+        beatContainerAudio.append(playButton)
+        beatContainerAudio.append(stopButton)
         divisor.innerHTML = `<img src=${beat.img} alt=${beat.name} class="beat-container__div-img">
 <div>
-<div class="audio-controls">
-<audio controls>
-<source src="ruta_del_archivo_audio.mp3" type="audio/mpeg">
-Tu navegador no soporta la etiqueta de audio.
-</audio>
+
+<div class="beat-container__div-input-range">
+</div>
 </div>
 <h3 class="beat-container__div-h3">${beat.name}</h3>
 <h4 class = "beat-container__div-h4">${beat.category}</h4>
@@ -86,12 +103,13 @@ Tu navegador no soporta la etiqueta de audio.
 </div>
 </div>
 `
-beatContainer.appendChild(divisor)
-loadingSpan.style.display = 'none'
+        beatContainer.appendChild(divisor)
+        loadingSpan.style.display = 'none'
         const btnAdd = document.querySelectorAll(".beat-container__add-to-cart")
         btnAdd.forEach((btn) => {
             btn.addEventListener("click", addToCart)
         })
+        divisor.insertBefore(beatContainerAudio, divisor.childNodes[1])
     })
 }
 
