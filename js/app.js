@@ -71,6 +71,12 @@ function generateAllBeats() {
         divisor.classList.add("beat-container__div")
         divisor.innerHTML = `<img src=${beat.img} alt=${beat.name} class="beat-container__div-img">
 <div>
+<div class="audio-controls">
+<audio controls>
+<source src="ruta_del_archivo_audio.mp3" type="audio/mpeg">
+Tu navegador no soporta la etiqueta de audio.
+</audio>
+</div>
 <h3 class="beat-container__div-h3">${beat.name}</h3>
 <h4 class = "beat-container__div-h4">${beat.category}</h4>
 <h4>Elegir licencia: </h4>

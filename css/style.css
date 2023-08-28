@@ -24,6 +24,15 @@ p{
     color: rgb(88, 5, 88)!important;
     transition: .3s all;
 }
+.dropdown-item{
+    cursor: pointer;
+    color: rgb(123, 49, 86)!important;
+}
+.dropdown-item:hover{
+    background-color: deeppink!important;
+    color: black!important;
+    transition: .5s all;
+}
 #cartDiv{
     display: flex;
     align-items: center;
@@ -128,15 +137,6 @@ p{
     box-shadow: 0px 0px 15px 1px gray;
     transition: .2s all ease-in;
 }
-.dropdown-item{
-    cursor: pointer;
-    color: rgb(123, 49, 86)!important;
-}
-.dropdown-item:hover{
-    background-color: deeppink!important;
-    color: black!important;
-    transition: .5s all;
-}
 select{
     border-radius: 5px;
     border: none;
@@ -144,6 +144,24 @@ select{
 }
 option{
     font-size: 1.3rem;
+}
+.audio-controls{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+audio{
+    max-width: 100%;
+}
+audio::-webkit-media-controls{
+    color: hotpink;
+    border-radius: 30px;
+}
+
+audio:-webkit-media-controls-play-button{
+    background-color: violet;
+    border-radius: 50%;
 }
 
 @media screen and (max-width: 576px) {
