@@ -7,6 +7,9 @@ body{
     background-color: black!important;
     color: deeppink!important;
 }
+p{
+    margin-bottom: 0%!important;
+}
 .navbar{
     background: linear-gradient(160deg, deeppink, fuchsia);
 }
@@ -51,7 +54,7 @@ body{
     font-weight: 800;
     border: none;
     border-radius: 5px;
-    margin: 0.4rem;
+    margin: 0.1rem;
 }
 .card-cart__btn-delete:hover{
     background-color: whitesmoke;

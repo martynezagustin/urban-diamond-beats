@@ -1,4 +1,6 @@
 const span = document.createElement("span")
+const cartDiv = document.querySelector("#cartDiv")
+span.classList.add("span-cart")
 
 function addToCart(e) {
     const selectLicense = e.target.parentNode.querySelector("select")
@@ -46,13 +48,15 @@ function addToCart(e) {
 function renderCart() {
     if (beatsCart.length > 0) {
         span.innerText = beatsCart.length || ''
+        span.style.display = 'flex'
         createSpanCart()
+        
+    } else {
+        span.style.display = "none"
     }
 }
 
 function createSpanCart() {
-    const cartDiv = document.querySelector("#cartDiv")
-    span.classList.add("span-cart")
     cartDiv.append(span)
 
 }
