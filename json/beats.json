@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "GLOOSITO TYPE BEAT",
+        "img": "./assets/imgs/gloosito-type-beat.jpg",
+        "category": "Detroit",
+        "price": {
+            "Exclusive": 89,
+            "Premium": 59,
+            "Standard": 39,
+            "Basic": 19
+        }
+    },
+    {
+        "id": 2,
+        "name": "CALLEJERO FINO TYPE BEAT",
+        "img": "./assets/imgs/callejero-fino-type-beat.jpg",
+        "category": "RKT/Cumbia 420",
+        "price": {
+            "Exclusive": 89,
+            "Premium": 59,
+            "Standard": 39,
+            "Basic": 19
+        }
+    },
+    {
+        "id": 3,
+        "name": "BHAVI TYPE BEAT",
+        "img": "./assets/imgs/bhavi-x-eladio-carrion.jpg",
+        "category": "Trap",
+        "price": {
+            "Exclusive": 89,
+            "Premium": 59,
+            "Standard": 39,
+            "Basic": 19
+        }
+    }
+]
