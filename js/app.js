@@ -18,7 +18,7 @@ function executeLoading() {
 function generateBeats() {
     clearContent()
     setTimeout(() => {
-        getApi("../json/beats.json")
+        getApi("./json/beats.json")
             .then(data => data.json())
             .then(data => {
                 beats = data
