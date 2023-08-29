@@ -14,7 +14,8 @@ p {
 }
 
 .material-icons {
-    color: purple;
+    color: rgb(99, 9, 57);
+    font-size: 3rem!important;
     cursor: pointer;
 }
 
@@ -192,9 +193,6 @@ option {
 
 
 @media screen and (max-width: 576px) {
-    .material-icons {
-        font-size: 2rem!important;
-    }
 
     #beats-container {
         display: grid;
