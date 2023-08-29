@@ -3,6 +3,7 @@
         "id": 1,
         "name": "GLOOSITO TYPE BEAT",
         "img": "./assets/imgs/gloosito-type-beat.jpg",
+        "audioSource": "./assets/audio/Harybo_160_Kbit_s.mp3",
         "category": "Detroit",
         "price": {
             "Exclusive": 89,
@@ -28,6 +29,7 @@
         "id": 3,
         "name": "BHAVI TYPE BEAT",
         "img": "./assets/imgs/bhavi-x-eladio-carrion.jpg",
+        "audioSource": "./assets/audio/Figuritas.mp3",
         "category": "Trap",
         "price": {
             "Exclusive": 89,
