@@ -46,15 +46,15 @@ function addToCart(e) {
 }
 
 function renderCart() {
-    if (beatsCart.length > 0) {
-        span.innerText = beatsCart.length || ''
-        span.style.display = 'flex'
-        createSpanCart()
-        
-    } else {
-        span.style.display = "none"
-    }
+        if (beatsCart.length > 0) {
+            span.innerText = beatsCart.length || ''
+            span.style.display = "flex"
+            createSpanCart()
+        } else {
+            span.style.display = 'none'
+        }
 }
+
 
 function createSpanCart() {
     cartDiv.append(span)
@@ -73,7 +73,7 @@ function updateCartBody() {
             let options = ""
             let totalPrices = 0
             for (const license of element.optionsSelected) {
-                options += `<option value="${license}">${license}</option>`
+                options += `<option value="${license}">${license}: U$D${element.price[license]}</option>`
                 totalPrices += element.price[license]
             }
             div.classList.add("card-cart")

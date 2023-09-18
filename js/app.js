@@ -77,13 +77,13 @@ function generateAllBeats() {
 
         const stopButton = document.createElement("div")
         stopButton.innerHTML = `<span class="material-icons">stop</span>`
-        stopButton.addEventListener("click", () =>{
+        stopButton.addEventListener("click", () => {
             audio.pause()
         })
 
         const divisor = document.createElement("div")
         divisor.classList.add("beat-container__div")
-        
+
         const beatContainerAudio = document.createElement("div")
         beatContainerAudio.classList.add("beat-container__div-audio")
         beatContainerAudio.append(playButton)
@@ -137,13 +137,34 @@ function filterByCategories(category, beats) {
     const categoryFilter = beats.filter((beat) => beat.category === category)
     if (categoryFilter.length > 0) {
         categoryFilter.forEach((beat) => {
-            let options = "" //variable con string vacio
-            for (const licenseType in beat.price) {
-                options += `<option value="${licenseType}">${licenseType}: <strong>U$D</strong> ${beat.price[licenseType]}</option>`
-            }
-            const divisor = document.createElement("div")
-            divisor.classList.add("beat-container__div")
-            divisor.innerHTML = `<img src=${beat.img} alt=${beat.name} class="beat-container__div-img">
+            $(document).ready(function () {
+
+                let options = "" //variable con string vacio
+                for (const licenseType in beat.price) {
+                    options += `<option value="${licenseType}">${licenseType}: <strong>U$D</strong> ${beat.price[licenseType]}</option>`
+                }
+
+                const playButton = document.createElement("div")
+                playButton.innerHTML = `<span class="material-icons">play_circle</span>`
+                let audio
+                playButton.addEventListener("click", () => {
+                    audio = new Audio(beat.audioSource)
+                    audio.play()
+                })
+
+                const stopButton = document.createElement("div")
+                stopButton.innerHTML = `<span class="material-icons">stop</span>`
+                stopButton.addEventListener("click", () => {
+                    audio.pause()
+                })
+                const divisor = document.createElement("div")
+                divisor.classList.add("beat-container__div")
+                $(divisor).hide()
+                const beatContainerAudio = document.createElement("div")
+                beatContainerAudio.classList.add("beat-container__div-audio")
+                beatContainerAudio.append(playButton)
+                beatContainerAudio.append(stopButton)
+                divisor.innerHTML = `<img src=${beat.img} alt=${beat.name} class="beat-container__div-img">
             <div>
             <h3 class="beat-container__div-h3">${beat.name}</h3>
             <h4 class = "beat-container__div-h4">${beat.category}</h4>
@@ -154,11 +175,14 @@ function filterByCategories(category, beats) {
             </div>
             </div>
             `
-            beatContainer.appendChild(divisor)
-            loadingSpan.style.display = 'none'
-            const btnAdd = document.querySelectorAll(".beat-container__add-to-cart")
-            btnAdd.forEach((btn) => {
-                btn.addEventListener("click", addToCart)
+                beatContainer.appendChild(divisor)
+                loadingSpan.style.display = 'none'
+                const btnAdd = document.querySelectorAll(".beat-container__add-to-cart")
+                btnAdd.forEach((btn) => {
+                    btn.addEventListener("click", addToCart)
+                })
+                divisor.insertBefore(beatContainerAudio, divisor.childNodes[1])
+                $(divisor).fadeIn("slow")
             })
         })
     }
